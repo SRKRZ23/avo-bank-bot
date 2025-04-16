@@ -28,7 +28,7 @@ const webAppButton = {
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
   console.log(`Received /start from user ${msg.from.id}`);
-  bot.sendMessage(chatId, 'Добро пожаловать в программу стажировки AVO Bank Uzbekistan! Ознакомьтесь с публичной офертой:', {
+  bot.sendMessage(chatId, 'Добро пожаловать в Заявку на посещение Лекции AVO MIND! Ознакомьтесь с публичной офертой:', {
     reply_markup: {
       inline_keyboard: [[webAppButton]]
     }
@@ -50,7 +50,7 @@ bot.on('message', (msg) => {
       console.log(`Web App data received:`, data);
       if (data.agreementAccepted) {
         userConsent.set(userId, true);
-        bot.sendMessage(chatId, 'Спасибо за согласие с офертой! Теперь заполните анкету для стажировки:', {
+        bot.sendMessage(chatId, 'Спасибо за согласие с офертой! Теперь заполните анкету для посещения Лекции AVO MIND:', {
           reply_markup: {
             inline_keyboard: [[{ text: 'Перейти к анкете', url: formUrl }]]
           }
